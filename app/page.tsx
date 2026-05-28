@@ -1,33 +1,37 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Probleem from "@/components/sections/Probleem";
 import Diensten from "@/components/sections/Diensten";
 import Cases from "@/components/sections/Cases";
+import Resultaten from "@/components/sections/Resultaten";
 import Proces from "@/components/sections/Proces";
 import Testimonials from "@/components/sections/Testimonials";
-import Pakket from "@/components/sections/Pakket";
+import Pakketten from "@/components/sections/Pakketten";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
 
-// Resultaten (stats section) is opgeslagen voor later — import hier wanneer klaar:
-// import Resultaten from "@/components/sections/Resultaten";
-
 export default function Home() {
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Ga naar inhoud
+      </a>
       <Navbar />
-      <Hero />
-      <TrustBar />
-      <Probleem />
-      <Diensten />
-      <Cases />
-      <Proces />
-      <Testimonials />
-      <Pakket />
-      <FAQ />
-      <FinalCTA />
+      <main id="main-content">
+        <Hero />
+        <TrustBar />
+        <Probleem />
+        <Diensten />
+        <Cases />
+        <Resultaten />
+        <Proces />
+        <Testimonials />
+        <Pakketten />
+        <FAQ />
+        <FinalCTA />
+      </main>
       <Footer />
     </>
   );

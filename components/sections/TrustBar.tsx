@@ -16,24 +16,25 @@ export default function TrustBar() {
         borderBottom: "1px solid var(--dark-border)",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-8">
-        <div className="flex flex-wrap items-center justify-between gap-8">
+      <h2 className="sr-only">CrispFlows in cijfers — resultaten voor hoveniersbedrijven</h2>
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0">
           {stats.map((stat, i) => (
-            <div key={i} className="flex items-center gap-8">
-              <div className="text-center">
+            <div key={i} className="flex items-center gap-0 lg:gap-0">
+              <div className="flex flex-col items-center text-center w-full">
                 <div
-                  className="text-4xl font-black leading-none tracking-tight"
+                  className="text-3xl sm:text-4xl font-black leading-none tracking-tight"
                   style={{ color: "var(--green)", letterSpacing: "-0.03em" }}
                 >
                   {stat.num}
                 </div>
-                <div className="text-sm font-medium mt-1" style={{ color: "var(--text-muted)" }}>
+                <div className="text-xs sm:text-sm font-medium mt-1.5" style={{ color: "var(--text-muted)" }}>
                   {stat.label}
                 </div>
               </div>
               {i < stats.length - 1 && (
                 <div
-                  className="hidden lg:block w-px h-12"
+                  className="hidden lg:block w-px h-12 flex-shrink-0 mx-auto"
                   style={{ background: "var(--dark-border)" }}
                 />
               )}

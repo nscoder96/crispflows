@@ -1,4 +1,5 @@
 import { Globe, MapPin, Settings2, Sparkles } from "lucide-react";
+import AnimateIn from "@/components/AnimateIn";
 
 const diensten = [
   {
@@ -58,73 +59,84 @@ export default function Diensten() {
       style={{ background: "var(--dark-card)" }}
       id="diensten"
     >
-      <div className="max-w-[1280px] mx-auto px-8">
-        <SectionTag>Wat we doen</SectionTag>
-        <h2
-          className="font-black leading-tight"
-          style={{ fontSize: "clamp(2rem, 4vw, 4rem)", letterSpacing: "-0.025em" }}
-        >
-          Eén systeem.
-          <br />
-          Alles erin.
-        </h2>
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+        <AnimateIn>
+          <SectionTag>Wat we doen</SectionTag>
+          <h2
+            className="font-black leading-tight"
+            style={{ fontSize: "clamp(2rem, 4vw, 4rem)", letterSpacing: "-0.025em" }}
+          >
+            Eén systeem.
+            <br />
+            Alles erin.
+          </h2>
+          <p className="mt-4 text-base max-w-[500px]" style={{ color: "var(--text-secondary)" }}>
+            Alles wat je hovenierbedrijf nodig heeft om online te groeien: website, lokale SEO,
+            Google Ads en klantbeheer in één compleet pakket.
+          </p>
+        </AnimateIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-14">
-          {diensten.map((d) => (
-            <div
-              key={d.num}
-              className="group relative p-8 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: "var(--dark)",
-                border: "1px solid var(--dark-border)",
-              }}
-            >
-              {/* Bottom accent line on hover */}
+          {diensten.map((d, i) => (
+            <AnimateIn key={d.num} delay={i * 80}>
               <div
-                className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                style={{ background: "var(--green)" }}
-              />
-
-              <div
-                className="text-5xl font-black leading-none mb-4"
-                style={{ color: "rgba(34,197,94,0.12)", letterSpacing: "-0.04em" }}
+                className="hover-card group relative p-8 rounded-2xl overflow-hidden h-full cursor-default"
+                style={{
+                  background: "var(--dark)",
+                  border: "1px solid var(--dark-border)",
+                }}
               >
-                {d.num}
-              </div>
+                {/* Bottom accent line on hover */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  style={{ background: "var(--green)" }}
+                  aria-hidden="true"
+                />
 
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ background: "var(--green-dim)", color: "var(--green)" }}
-              >
-                <d.Icon size={22} strokeWidth={1.75} />
-              </div>
+                <div
+                  className="text-5xl font-black leading-none mb-4"
+                  style={{ color: "rgba(34,197,94,0.12)", letterSpacing: "-0.04em" }}
+                  aria-hidden="true"
+                >
+                  {d.num}
+                </div>
 
-              <h3 className="text-lg font-bold mb-3 text-white">{d.title}</h3>
-              <p
-                className="text-sm leading-relaxed mb-4"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {d.desc}
-              </p>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: "var(--green-dim)", color: "var(--green)" }}
+                  aria-hidden="true"
+                >
+                  <d.Icon size={22} strokeWidth={1.75} />
+                </div>
 
-              <ul className="flex flex-col gap-1.5 mt-auto">
-                {d.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm pl-5 relative"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    <span
-                      className="absolute left-0 text-xs font-bold"
-                      style={{ color: "var(--green)" }}
+                <h3 className="text-lg font-bold mb-3 text-white">{d.title}</h3>
+                <p
+                  className="text-sm leading-relaxed mb-4"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  {d.desc}
+                </p>
+
+                <ul className="flex flex-col gap-1.5 mt-auto" role="list">
+                  {d.items.map((item) => (
+                    <li
+                      key={item}
+                      className="text-sm pl-5 relative"
+                      style={{ color: "var(--text-muted)" }}
                     >
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                      <span
+                        className="absolute left-0 text-xs font-bold"
+                        style={{ color: "var(--green)" }}
+                        aria-hidden="true"
+                      >
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

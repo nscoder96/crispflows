@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AnimateIn from "@/components/AnimateIn";
 
 const vragen = [
   {
@@ -35,15 +36,32 @@ const vragen = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: vragen.map((v) => ({
+    "@type": "Question",
+    name: v.vraag,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: v.antwoord,
+    },
+  })),
+};
+
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="py-28" style={{ background: "var(--dark)" }} id="faq">
-      <div className="max-w-[1280px] mx-auto px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left */}
-          <div className="lg:sticky lg:top-32 lg:self-start">
+          <AnimateIn className="lg:sticky lg:top-32 lg:self-start">
             <SectionTag>FAQ</SectionTag>
             <h2
               className="font-black leading-tight mb-6"
@@ -58,46 +76,65 @@ export default function FAQ() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-black no-underline transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-black no-underline transition-all duration-200 hover:-translate-y-0.5 cursor-pointer focus:outline-none focus-visible:ring-2"
               style={{ background: "var(--green)" }}
             >
               Stel jouw vraag →
             </a>
-          </div>
+          </AnimateIn>
 
           {/* Right: accordion */}
-          <div className="divide-y" style={{ borderColor: "var(--dark-border)" }}>
-            {vragen.map((item, i) => (
-              <div key={i}>
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between py-6 text-left cursor-pointer"
-                  aria-expanded={open === i}
-                >
-                  <span className="font-semibold text-base text-white pr-4">{item.vraag}</span>
-                  <span
-                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs transition-transform duration-200"
+          <AnimateIn delay={100}>
+            <div className="divide-y" style={{ borderColor: "var(--dark-border)" }}>
+              {vragen.map((item, i) => (
+                <div key={i}>
+                  <button
+                    onClick={() => setOpen(open === i ? null : i)}
+                    className="w-full flex items-center justify-between py-6 text-left cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:text-[var(--green)]"
+                    aria-expanded={open === i}
+                    aria-controls={`faq-answer-${i}`}
+                  >
+                    <span
+                      className="font-semibold text-base pr-4 transition-colors duration-200"
+                      style={{ color: open === i ? "var(--green)" : "white" }}
+                    >
+                      {item.vraag}
+                    </span>
+                    <span
+                      className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                      style={{
+                        background: open === i ? "var(--green)" : "var(--dark-card)",
+                        border: "1px solid var(--dark-border)",
+                        color: open === i ? "#000" : "var(--text-secondary)",
+                        transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
+                        transition: "transform 0.25s ease, background 0.2s, color 0.2s",
+                      }}
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </button>
+
+                  <div
+                    id={`faq-answer-${i}`}
+                    role="region"
                     style={{
-                      background: open === i ? "var(--green)" : "var(--dark-card)",
-                      border: "1px solid var(--dark-border)",
-                      color: open === i ? "#000" : "var(--text-secondary)",
-                      transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
+                      maxHeight: open === i ? "300px" : "0",
+                      overflow: "hidden",
+                      transition: "max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
                     }}
                   >
-                    +
-                  </span>
-                </button>
-                {open === i && (
-                  <p
-                    className="pb-6 text-base leading-relaxed"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    {item.antwoord}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+                    <p
+                      className="pb-6 text-base leading-relaxed"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {item.antwoord}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </div>
     </section>
