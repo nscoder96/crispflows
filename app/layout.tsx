@@ -62,13 +62,6 @@ const organizationSchema = {
   description:
     "Het complete marketing- en groeisysteem voor hoveniersbedrijven: converterende website, lokale SEO, Google Ads, CRM en AI-tools.",
   areaServed: { "@type": "Country", name: "Nederland" },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "47",
-    bestRating: "5",
-    worstRating: "1",
-  },
   knowsAbout: [
     "Marketing voor hoveniers",
     "Website hoveniersbedrijf",

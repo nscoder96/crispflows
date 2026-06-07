@@ -1,53 +1,53 @@
-import { Globe, MapPin, Settings2, Sparkles } from "lucide-react";
+import { Globe, Search, UserCheck, Sparkles } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 
 const diensten = [
   {
     num: "01",
     Icon: Globe,
-    title: "Converterende Website",
-    desc: "Niet alleen mooi, maar gebouwd om bezoekers te veranderen in betalende klanten.",
+    title: "Converterende website",
+    desc: "Een website die voor je werkt. Bezoekers die binnenkomen, vragen een offerte aan — niet weggaan.",
     items: [
-      "Maatwerk design op jouw merk",
-      "Snel en mobiel geoptimaliseerd",
-      "Duidelijke CTA's & offerteformulier",
-      "Binnen 3 weken live",
+      "Gebouwd op jouw merk en werkgebied",
+      "Laadt snel op elke telefoon",
+      "Duidelijke knop: 'Vraag offerte aan'",
+      "Binnen 2 weken live",
     ],
   },
   {
     num: "02",
-    Icon: MapPin,
-    title: "Lokale SEO & Google Ads",
-    desc: "Word gevonden door klanten in jouw regio op het moment dat ze zoeken naar een hovenier.",
+    Icon: Search,
+    title: "Vindbaar in Google én ChatGPT",
+    desc: "Als iemand in jouw regio zoekt naar een hovenier — online of via AI — staat jij bovenaan.",
     items: [
-      "Google Bedrijfsprofiel optimalisatie",
-      "Lokale zoekwoorden strategie",
-      "Google Ads campagnes",
-      "Maandelijkse rapportage",
+      "Google Bedrijfsprofiel op orde",
+      "Gevonden in jouw gemeente en omgeving",
+      "Ook zichtbaar in ChatGPT en AI-zoekopdrachten",
+      "Google Ads voor directe aanvragen",
     ],
   },
   {
     num: "03",
-    Icon: Settings2,
-    title: "CRM & Opvolging",
-    desc: "Nooit meer een lead laten schieten. Automatisch opvolgen, offertes sturen en klanten bijhouden.",
+    Icon: UserCheck,
+    title: "Verhoog klantwaarde door perfecte opvolging",
+    desc: "Elke lead krijgt op het juiste moment een bericht. Geen vergeten offerte, geen gemiste klant.",
     items: [
-      "Eenvoudig CRM systeem",
-      "Automatische e-mail opvolging",
-      "Offerte pipeline",
-      "Klanthistorie & notities",
+      "Automatische bevestiging na aanvraag",
+      "Herinnering als klant niet reageert",
+      "Offerte pipeline overzichtelijk bijhouden",
+      "Vraag reviews op het juiste moment",
     ],
   },
   {
     num: "04",
     Icon: Sparkles,
     title: "AI Tools",
-    desc: "Chatbot, review automatisering en slimme tools die voor je werken — ook als jij in de tuin bezig bent.",
+    desc: "Een chatbot op je site beantwoordt vragen 24/7. Ook als jij met de handen in de aarde zit.",
     items: [
-      "AI chatbot op je website",
-      "Automatische review uitnodigingen",
-      "Slimme offerte suggesties",
-      "24/7 beschikbaar voor leads",
+      "AI chatbot vangt leads op buiten kantooruren",
+      "Automatische review-uitnodigingen",
+      "Slimme suggesties voor offertes",
+      "Minder handwerk, meer rust",
     ],
   },
 ];
@@ -71,8 +71,7 @@ export default function Diensten() {
             Alles erin.
           </h2>
           <p className="mt-4 text-base max-w-[500px]" style={{ color: "var(--text-secondary)" }}>
-            Alles wat je hovenierbedrijf nodig heeft om online te groeien: website, lokale SEO,
-            Google Ads en klantbeheer in één compleet pakket.
+            Alles wat je hovenierbedrijf nodig heeft om online te groeien — zonder dat jij er dag en nacht mee bezig hoeft te zijn.
           </p>
         </AnimateIn>
 
@@ -86,7 +85,6 @@ export default function Diensten() {
                   border: "1px solid var(--dark-border)",
                 }}
               >
-                {/* Bottom accent line on hover */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                   style={{ background: "var(--green)" }}

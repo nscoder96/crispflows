@@ -49,11 +49,18 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-lg leading-relaxed mb-10 max-w-[520px]"
+          className="text-lg leading-relaxed mb-4 max-w-[520px]"
           style={{ color: "var(--text-secondary)" }}
         >
           Het complete groeisysteem voor hoveniers: een converterende website,
           lokale Google-advertenties, slim CRM en AI-tools — alles in één pakket.
+        </p>
+
+        <p
+          className="text-base font-semibold mb-10 max-w-[520px]"
+          style={{ color: "rgba(255,255,255,0.92)", textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}
+        >
+          Van vakman tot AI-consultant — ik ken de sector van binnenuit.
         </p>
 
         <div className="flex flex-wrap items-center gap-4">

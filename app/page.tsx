@@ -4,7 +4,6 @@ import TrustBar from "@/components/sections/TrustBar";
 import Probleem from "@/components/sections/Probleem";
 import Diensten from "@/components/sections/Diensten";
 import Cases from "@/components/sections/Cases";
-import Resultaten from "@/components/sections/Resultaten";
 import Proces from "@/components/sections/Proces";
 import Testimonials from "@/components/sections/Testimonials";
 import Pakketten from "@/components/sections/Pakketten";
@@ -25,7 +24,6 @@ export default function Home() {
         <Probleem />
         <Diensten />
         <Cases />
-        <Resultaten />
         <Proces />
         <Testimonials />
         <Pakketten />

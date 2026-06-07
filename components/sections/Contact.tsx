@@ -25,7 +25,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-lg mb-10" style={{ color: "var(--text-secondary)" }}>
-            Wij analyseren jouw situatie, concurrentie en kansen in jouw regio.
+            In een vrijblijvend gesprek kijken we samen naar jouw online aanwezigheid en wat er beter kan.
             Geen verplichtingen — wel direct waardevolle inzichten.
           </p>
 
@@ -55,7 +55,7 @@ export default function Contact() {
           >
             {[
               "Geen langlopend contract",
-              "Resultaat of geen betaling",
+              "Maandelijks opzegbaar",
               "Binnen 3 weken live",
             ].map((item) => (
               <div

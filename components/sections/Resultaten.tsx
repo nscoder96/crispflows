@@ -1,8 +1,8 @@
 const stats = [
-  { num: "3×", label: "Meer offerteaanvragen" },
-  { num: "€52K", label: "Gemiddeld extra omzet jaar 1" },
-  { num: "87%", label: "Snellere klantopvolging" },
-  { num: "60 dgn", label: "Gemiddeld break-even" },
+  { num: "3 wkn", label: "Gemiddeld live" },
+  { num: "<60 sec", label: "Reactie op nieuwe lead" },
+  { num: "24/7", label: "Bereikbaar via AI-chat" },
+  { num: "Maandelijks", label: "Opzegbaar, geen contract" },
 ];
 
 export default function Resultaten() {
@@ -18,7 +18,7 @@ export default function Resultaten() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-5 opacity-60">
               <span className="w-6 h-px inline-block bg-black/40" />
-              Bewezen resultaten
+              Wat je kunt verwachten
             </div>
             <h2
               className="font-black leading-tight text-black mb-5"
@@ -29,8 +29,9 @@ export default function Resultaten() {
               voor je doet
             </h2>
             <p className="text-lg mb-10 text-black/70">
-              Onze klanten zien gemiddeld binnen 60 dagen significante groei
-              in aanvragen en omzet.
+              CrispFlows is in opbouw. Hieronder zie je wat het systeem voor je
+              inricht — geen beloftes over cijfers, maar concrete bouwstenen die
+              vanaf dag één staan.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
@@ -51,37 +52,37 @@ export default function Resultaten() {
             </div>
           </div>
 
-          {/* Right: quote + case */}
+          {/* Right: honest scenario card (no fabricated results) */}
           <div>
-            <blockquote
-              className="text-2xl font-bold text-black leading-snug mb-6"
-              style={{ letterSpacing: "-0.01em" }}
-            >
-              "Binnen 6 weken had ik al meer aanvragen dan in het hele kwartaal
-              daarvoor. CrispFlows heeft mijn bedrijf echt op de kaart gezet."
-            </blockquote>
-            <p className="text-base font-semibold text-black/70 mb-8">
-              — Martijn de Groot, De Groene Tuin (Utrecht)
-            </p>
-
             <div
-              className="p-6 rounded-2xl"
+              className="p-7 rounded-2xl mb-6"
               style={{ background: "rgba(0,0,0,0.1)" }}
             >
-              <p className="text-sm font-bold text-black mb-4">
-                Case study: Hoveniersbedrijf Utrecht
+              <p className="text-sm font-bold text-black mb-3">
+                Zo kan het eruitzien
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <div className="text-2xl font-black text-black leading-none">+180%</div>
-                  <div className="text-xs font-semibold text-black/60 mt-1">Website bezoekers</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-black leading-none">+340%</div>
-                  <div className="text-xs font-semibold text-black/60 mt-1">Offerte aanvragen</div>
-                </div>
-              </div>
+              <p className="text-base text-black/75 leading-relaxed mb-5">
+                Een hovenier of stratenmaker die nu telefonisch en via
+                mond-tot-mond werkt, krijgt een vindbare website, een
+                geoptimaliseerd Google Bedrijfsprofiel en automatische
+                review-uitnodigingen. Aanvragen die nu blijven liggen, worden
+                automatisch opgevolgd.
+              </p>
+              <p className="text-xs text-black/50 leading-relaxed">
+                Scenario op basis van branchekennis, geen eigen resultaten.
+                Resultaten variëren per bedrijf, regio en seizoen. De eerste
+                pilotklanten boeken nu hun resultaten — echte cases volgen hier
+                zodra ze er zijn.
+              </p>
             </div>
+
+            <blockquote
+              className="text-xl font-bold text-black leading-snug"
+              style={{ letterSpacing: "-0.01em" }}
+            >
+              Ik ben Niek — zelf stratenmaker en oud-hovenier. Ik bouw dit
+              systeem voor het vak dat ik van binnenuit ken.
+            </blockquote>
           </div>
         </div>
       </div>
